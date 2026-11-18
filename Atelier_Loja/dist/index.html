@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f2ec">
+
+    <!-- SEO -->
+    <meta
+        name="description"
+        content="Um olhar sobre o essencial. Conheça o universo Atelier, suas coleções e inspirações."
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ATELIER — O essencial, com alma">
+    <meta
+        property="og:description"
+        content="Texturas naturais. Formas leves. Um novo olhar para o essencial."
+    >
+    <meta property="og:type" content="website">
+    <meta
+        property="og:url"
+        content="https://atelier-loja-gabriel.rlopes-sap.chatgpt.site"
+    >
+
+    <title>ATELIER — O essencial, com alma</title>
+
+    <!-- Ícone -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+    <!-- Pré-carregamento da imagem principal -->
+    <link
+        rel="preload"
+        href="assets/hero-linen.webp"
+        as="image"
+        fetchpriority="high"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript -->
+    <script src="store-config.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ========================================
+         ACESSIBILIDADE
+    ========================================= -->
+
+    <a href="#main-content" class="skip-link">
+        Pular para o conteúdo
+    </a>
+
+
+    <!-- ========================================
+         CABEÇALHO
+    ========================================= -->
+
+    <header class="site-header" id="site-header">
+
+        <!-- Botão do menu -->
+        <button
+            class="header-action menu-trigger"
+            id="open-menu"
+            aria-label="Abrir menu e catálogo"
+            aria-haspopup="dialog"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 7h18M3 12h18M3 17h12"/>
+            </svg>
+
+            <span>Menu</span>
+        </button>
+
+
+        <!-- Logo da loja -->
+        <a
+            class="wordmark"
+            href="#/"
+            aria-label="Atelier — página inicial"
+        >
+            <span data-brand>ATELIER</span>
+            <!-- <small>O ESSENCIAL, COM ALMA</small> -->
+        </a>
+
+
+        <!-- Ações do cabeçalho -->
+        <div class="header-right">
+
+            <!-- Busca -->
+            <button
+                class="header-action search-trigger"
+                id="open-search"
+                aria-label="Buscar no catálogo"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="10.5" cy="10.5" r="6.5"/>
+                    <path d="m16 16 5 5"/>
+                </svg>
+            </button>
+
+
+            <!-- Sacola -->
+            <button
+                class="header-action"
+                id="open-cart"
+                aria-label="Abrir sacola, 0 itens"
+                aria-haspopup="dialog"
+            >
+                <span class="bag-label">Sacola</span>
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 7h14l1 14H4L5 7Z"/>
+                    <path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+                </svg>
+
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================
+         CONTEÚDO PRINCIPAL
+    ========================================= -->
+
+    <main id="main-content" tabindex="-1"></main>
+
+
+    <!-- ========================================
+         RODAPÉ
+    ========================================= -->
+
+    <footer class="site-footer" id="site-footer">
+
+        <!-- Identidade da loja -->
+        <div class="footer-top">
+
+            <a href="#/" class="footer-wordmark" data-brand>
+                ATELIER
+            </a>
+
+            <p>Um olhar sobre o essencial.</p>
+
+            <!-- Rede social / Universo Atelier -->
+            <a
+                class="footer-social"
+                href="#/pagina/sobre"
+                aria-label="Conheça o universo Atelier"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle
+                        cx="18"
+                        cy="6"
+                        r=".7"
+                        fill="currentColor"
+                    />
+                </svg>
+
+                <span>Nosso universo</span>
+            </a>
+
+        </div>
+
+
+        <!-- Links do rodapé -->
+        <nav class="footer-nav" aria-label="Links do rodapé">
+
+            <a href="#/pagina/contato">
+                Contato
+            </a>
+
+            <a href="#/pagina/privacidade">
+                Política de Privacidade
+            </a>
+
+            <a href="#/">
+                Início
+            </a>
+
+            <a href="#/colecao/todos">
+                Produtos
+            </a>
+
+            <a href="#/pagina/trocas">
+                Trocas e Devoluções
+            </a>
+
+        </nav>
+
+
+        <!-- Informações finais -->
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="copyright-year">2026</span>
+                <span data-brand-title>Atelier</span>.
+                Todos os direitos reservados.
+            </p>
+
+            <span class="preview-note">
+                PRÉVIA DA LOJA · IMAGENS ILUSTRATIVAS
+            </span>
+
+            <!-- Voltar ao topo -->
+            <button
+                class="back-top"
+                id="back-top"
+                aria-label="Voltar ao topo"
+            >
+                Voltar ao topo
+
+                <span aria-hidden="true">↑</span>
+            </button>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================
+         MENU LATERAL / CATÁLOGO
+    ========================================= -->
+
+    <dialog
+        id="menu-dialog"
+        class="drawer menu-drawer"
+        aria-labelledby="menu-title"
+    >
+
+        <!-- Cabeçalho do menu -->
+        <div class="drawer-top">
+
+            <span id="menu-title" class="drawer-eyebrow">
+                Explore <span data-brand-title>Atelier</span>
+            </span>
+
+            <!-- Fechar menu -->
+            <button
+                class="icon-button close-dialog"
+                aria-label="Fechar menu"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19"/>
+                </svg>
+            </button>
+
+        </div>
+
+
+        <!-- Campo de pesquisa -->
+        <form
+            id="menu-search"
+            class="menu-search"
+            role="search"
+        >
+
+            <label class="sr-only" for="search-input">
+                Buscar produtos e coleções
+            </label>
+
+            <input
+                id="search-input"
+                type="search"
+                placeholder="O que você procura?"
+                autocomplete="off"
+            >
+
+            <!-- Botão de pesquisa -->
+            <button aria-label="Buscar">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="10.5" cy="10.5" r="6.5"/>
+                    <path d="m16 16 5 5"/>
+                </svg>
+
+            </button>
+
+        </form>
+
+
+        <!-- Navegação do catálogo -->
+        <nav
+            class="drawer-scroll"
+            id="menu-navigation"
+            aria-label="Catálogo e informações"
+        ></nav>
+
+
+        <!-- Área de conta -->
+        <div class="drawer-account">
+
+            <span class="account-icon">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="7" r="4"/>
+                    <path d="M4 22v-4a8 8 0 0 1 16 0v4"/>
+                </svg>
+
+            </span>
+
+            <a href="#/conta/cadastro">
+                Cadastre-se
+            </a>
+
+            <span class="account-divider"></span>
+
+            <a href="#/conta/login">
+                Login
+            </a>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- ========================================
+         SACOLA DE COMPRAS
+    ========================================= -->
+
+    <dialog
+        id="cart-dialog"
+        class="drawer cart-drawer"
+        aria-labelledby="cart-title"
+    >
+
+        <!-- Cabeçalho da sacola -->
+        <div class="drawer-top">
+
+            <h2 id="cart-title">
+                Sua sacola
+                <span id="cart-title-count">(0)</span>
+            </h2>
+
+            <!-- Fechar sacola -->
+            <button
+                class="icon-button close-dialog"
+                aria-label="Fechar sacola"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m5 5 14 14M19 5 5 19"/>
+                </svg>
+            </button>
+
+        </div>
+
+
+        <!-- Produtos adicionados -->
+        <div id="cart-content" class="cart-content"></div>
+
+    </dialog>
+
+
+    <!-- ========================================
+         MODAL EDITORIAL
+    ========================================= -->
+
+    <dialog
+        id="editorial-dialog"
+        class="editorial-dialog"
+        aria-label="Editorial Atelier"
+    >
+
+        <!-- Fechar editorial -->
+        <button
+            class="icon-button close-dialog editorial-close"
+            aria-label="Fechar editorial"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 5 14 14M19 5 5 19"/>
+            </svg>
+        </button>
+
+
+        <!-- Conteúdo editorial -->
+        <div id="editorial-content"></div>
+
+    </dialog>
+
+
+    <!-- ========================================
+         NOTIFICAÇÕES
+    ========================================= -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- ========================================
+         AVISO SEM JAVASCRIPT
+    ========================================= -->
+
+    <noscript>
+        <div class="noscript">
+            Ative o JavaScript para explorar as coleções desta loja.
+        </div>
+    </noscript>
+
+</body>
+
+</html>
